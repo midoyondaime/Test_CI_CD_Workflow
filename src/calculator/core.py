@@ -12,8 +12,8 @@ def divide(a,b):
     try:
         return float(a)/float(b)
     
-    except ZeroDivisionError as e:
-        return ValueError("Cannot devide by 0")
+    except:
+        raise ValueError("Cannot devide by 0")
     
 
 if __name__ == "__main__":
