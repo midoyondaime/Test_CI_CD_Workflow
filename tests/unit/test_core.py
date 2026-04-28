@@ -1,5 +1,6 @@
 import pytest
-from calculator.core import add
+from pytest import approx
+from calculator.core import add,substract
 
 
 # Using Parametrize to test many cases at once
@@ -11,4 +12,8 @@ from calculator.core import add
 def test_add(a,b,expected):
     assert add(a,b) == expected
 
+
+def test_substract(fixture_substract):
+    for element in fixture_substract:
+        assert substract(element[0],element[1]) == approx(element[2])
 
