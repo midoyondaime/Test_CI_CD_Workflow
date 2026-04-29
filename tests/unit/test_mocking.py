@@ -65,7 +65,7 @@ class TestMockHistoryVerification:
 
     def test_history_not_called_without_operation(self, mocker):
         """Calculator with no operations means history is not called."""
-        from src.calculator.core import Calculator
+        from calculator.core import Calculator
 
         # Create a calculator with a mock
         mock_history = mocker.Mock()
@@ -94,7 +94,7 @@ class TestMockWithSideEffects:
 
     def test_history_raises_exception(self, mocker):
         """Simulate history service failing (e.g., database offline)."""
-        from src.calculator.core import Calculator
+        from calculator.core import Calculator
 
         # Create a mock that raises an exception when log() is called
         mock_history = mocker.Mock()
@@ -108,7 +108,7 @@ class TestMockWithSideEffects:
 
     def test_history_returns_custom_values(self, mocker):
         """Mocks can return custom values."""
-        from src.calculator.core import Calculator
+        from calculator.core import Calculator
 
         mock_history = mocker.Mock()
         # Set up mock to return different values on successive calls

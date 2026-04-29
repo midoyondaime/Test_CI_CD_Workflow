@@ -1,6 +1,6 @@
 import pytest
 from pytest import approx
-from src.calculator.core import add,substract,multiply, divide
+from calculator.core import add,substract,multiply, divide
 
 
 # Using Parametrize to test many cases at once

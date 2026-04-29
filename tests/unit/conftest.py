@@ -44,7 +44,7 @@ def fresh_log():
 
 
 # NEW: Fixture dependencies
-from src.calculator.history import OperationHistory
+from calculator.history import OperationHistory
 
 @pytest.fixture(scope="function")
 def history():
@@ -61,14 +61,14 @@ def calculator(history):
     - calculator uses it
     - Execution order: history → calculator → test
     """
-    from src.calculator.core import Calculator
+    from calculator.core import Calculator
     return Calculator(history=history)
 
 
 @pytest.fixture(scope="function")
 def calculator_no_history():
     """Fixture: Calculator without history (faster, isolated)."""
-    from src.calculator.core import Calculator
+    from calculator.core import Calculator
     return Calculator(history=None)
 
 
@@ -93,5 +93,5 @@ def mock_history():
 @pytest.fixture(scope="function")
 def calculator_with_mock(mock_history):
     """Fixture: Calculator using a MOCKED history service."""
-    from src.calculator.core import Calculator
+    from calculator.core import Calculator
     return Calculator(history=mock_history)
