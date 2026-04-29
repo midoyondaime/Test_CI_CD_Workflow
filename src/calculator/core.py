@@ -1,4 +1,4 @@
-from history import OperationHistory
+from .history import OperationHistory
 class Calculator:
     """Calculator with operation history logging."""
 
@@ -33,22 +33,22 @@ class Calculator:
             raise ValueError("Cannot devide by 0")
 
 
-# # Keep standalone functions for backwards compatibility
-# def add(a, b):
-#     return a + b
+# Keep standalone functions for backwards compatibility
+def add(a, b):
+    return a + b
 
-# def substract(a, b):
-#     return a - b
+def substract(a, b):
+    return a - b
 
-# def multiply(a, b):
-#     return a * b
+def multiply(a, b):
+    return a * b
 
-# def divide(a, b):
-#     try:
-#         return float(a) / float(b)
+def divide(a, b):
+    try:
+        return float(a) / float(b)
 
-#     except:
-#         raise ValueError("Cannot devide by 0")
+    except:
+        raise ValueError("Cannot devide by 0")
     
 
 if __name__ == "__main__":
