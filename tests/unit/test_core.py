@@ -41,3 +41,22 @@ def test_divide_by_zero():
         divide(10, 0)
 
 
+class TestEdgeCases:
+    """Edge case testing for comprehensive coverage."""
+
+    def test_zero_handling(self):
+        """Test operations with zero."""
+        assert add(0, 5) == 5
+        assert multiply(0, 100) == 0
+        assert divide(0, 5) == 0.0
+
+    def test_negative_numbers(self):
+        """Test operations with negative numbers."""
+        assert add(-5, 3) == -2
+        assert substract(-5, 3) == -8
+        assert multiply(-4, 5) == -20
+
+    def test_float_division(self):
+        """Test division with float results."""
+        assert approx(divide(5, 2), abs=0.001) == 2.5
+        assert approx(divide(10, 3), abs=0.01) == 3.333
