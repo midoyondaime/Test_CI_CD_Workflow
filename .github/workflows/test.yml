@@ -37,7 +37,7 @@ jobs:
       # Step 6: Upload report as artifact
       - name: Upload test report
         if: always()
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: test-report-py${{ matrix.python-version }}
           path: report.html
