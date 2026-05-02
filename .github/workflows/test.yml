@@ -28,9 +28,16 @@ jobs:
       - name: Run tests
         run: pytest tests/ -v --tb=short
 
-      # Step 5: Generate coverage report
-      - name: Generate coverage report
+      # Step 5: Generate HTML report
+      - name: Generate HTML report
         run: |
           pip install pytest-html
-          pytest --html=report.html
-          
+          pytest tests/ --html=report.html --self-contained-html
+
+      # Step 6: Upload report as artifact
+      - name: Upload test report
+        if: always()
+        uses: actions/upload-artifact@v3
+        with:
+          name: test-report-py${{ matrix.python-version }}
+          path: report.html
