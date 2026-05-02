@@ -20,8 +20,9 @@ jobs:
           python-version: ${{ matrix.python-version }}
 
       # Step 3: Install dependencies
-      - name: Install pytest
-        run: pip install pytest
+      - name: Install pytest and pytest-mock
+        run: pip install pytest pytest-mock
+        
 
       # Step 4: Run tests with verbose output
       - name: Run tests
